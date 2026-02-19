@@ -1,8 +1,3 @@
-Com base nas fontes fornecidas, extraí as informações solicitadas sobre as cores primárias e secundárias e estruturei os dados no formato JSON exigido. 
-
-O arquivo abaixo aborda como as cores são percebidas psicologicamente, fisicamente (através do tato, paladar e audição) e fornece direcionamentos práticos para aplicações em design e arquitetura, visando acessibilidade e inclusão.
-
-```json
 {
   "db_cores_acessibilidade": [
     {
@@ -55,4 +50,3 @@ O arquivo abaixo aborda como as cores são percebidas psicologicamente, fisicame
     }
   ]
 }
-```
