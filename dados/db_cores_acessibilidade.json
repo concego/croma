@@ -1,0 +1,58 @@
+Com base nas fontes fornecidas, extraí as informações solicitadas sobre as cores primárias e secundárias e estruturei os dados no formato JSON exigido. 
+
+O arquivo abaixo aborda como as cores são percebidas psicologicamente, fisicamente (através do tato, paladar e audição) e fornece direcionamentos práticos para aplicações em design e arquitetura, visando acessibilidade e inclusão.
+
+```json
+{
+  "db_cores_acessibilidade": [
+    {
+      "nome_da_cor": "Vermelho",
+      "significado_psicologico_e_ideia": "Geralmente é a cor da raiva, da paixão, do calor, da excitação, da força física e da agressão. Também atua como um sinalizador para chamar a atenção e transmitir sentido de urgência e alerta.",
+      "referencias_fisicas_mundo_real": "Associada ao calor do fogo, fogueira e queimaduras de sol. No paladar e no tato, remete a alimentos picantes, maçãs, morangos, cerejas e à carne.",
+      "dica_design_produtos_moda": "Sua aplicação deve prever que a cor chama muito a atenção e comunica perigo ou urgência, sendo ideal para alarmes, sirenes ou elementos de destaque intenso.",
+      "dica_design_interiores_decoracao": "Por ser uma cor emocionante e intensa, capaz de aumentar o metabolismo e a pressão arterial, o vermelho deve ser usado com cautela para não gerar sensações indesejadas de estresse.",
+      "associacao_de_textura": "Para pessoas cegas, é frequentemente associada a texturas ásperas, rugosas ou com grumos e veios, além de remeter à sensação de temperatura quente."
+    },
+    {
+      "nome_da_cor": "Amarelo",
+      "significado_psicologico_e_ideia": "Transmite alegria, otimismo, confiança, energia, sabedoria e amizade.",
+      "referencias_fisicas_mundo_real": "Associada ao Sol, a frutas cítricas como o limão siciliano, à banana, gema de ovo e metais como o ouro.",
+      "dica_design_produtos_moda": "Indicada para produtos que queiram comunicar algo nutritivo, vivo, ou sensações de sabores doces e azedos.",
+      "dica_design_interiores_decoracao": "É uma ótima cor para compor áreas de lazer e convivência, favorecendo a comunicação e estimulando o raciocínio lógico, porém deve ser evitada em excesso para não despertar ansiedade.",
+      "associacao_de_textura": "Altamente associada a superfícies lisas, brilhantes e polidas (como o ouro), transmitindo sensações agradáveis de calor e incidência de luz."
+    },
+    {
+      "nome_da_cor": "Azul",
+      "significado_psicologico_e_ideia": "Comunica inteligência, frescor, calma, serenidade, lógica, simpatia e confiança.",
+      "referencias_fisicas_mundo_real": "Representada pela água fria, pelo oceano, rios e também pelo céu.",
+      "dica_design_produtos_moda": "Perfeita para itens que devem sugerir frescor, estabilidade e limpeza, ou associados ao som calmante de água corrente.",
+      "dica_design_interiores_decoracao": "Altamente recomendada para ambientes de trabalho e estudo, salas de reunião e escritórios em casa.",
+      "associacao_de_textura": "Tátilmente ligada a superfícies acetinadas, suaves, lisas e levemente onduladas, trazendo forte associação com temperaturas frias."
+    },
+    {
+      "nome_da_cor": "Verde",
+      "significado_psicologico_e_ideia": "Representa equilíbrio, revitalização, harmonia, paz, saúde, estabilidade e também a consciência ambiental.",
+      "referencias_fisicas_mundo_real": "Plantas vivas, folhas macias, grama, espinafre, alface e cheiro de ervas frescas como a hortelã.",
+      "dica_design_produtos_moda": "Pode ser aplicada em produtos e identidades focados em sustentabilidade, natureza e saúde, evocando aromas limpos, texturas crocantes ou sabores amargos.",
+      "dica_design_interiores_decoracao": "Devido à sua propriedade de trazer tranquilidade e estabilidade, é muito recomendada para salas de espera e espaços de reunião.",
+      "associacao_de_textura": "Geralmente associada a superfícies irregulares presentes na flora natural, mas que transmitem vida, maciez e sensações agradáveis, lisas ou folhosas."
+    },
+    {
+      "nome_da_cor": "Laranja",
+      "significado_psicologico_e_ideia": "Comunica conforto físico, segurança, sucesso, entusiasmo, alegria e forte sociabilidade.",
+      "referencias_fisicas_mundo_real": "Fortemente conectada com a própria fruta laranja e o calor do Sol.",
+      "dica_design_produtos_moda": "Boa aplicação para estimular a atividade mental e o apetite, sugerindo frescor tropical, nutrição e energia vibrante.",
+      "dica_design_interiores_decoracao": "Excelente para salas de visita, de jantar e cozinhas, podendo também ser útil em escritórios para estimular a criatividade corporativa.",
+      "associacao_de_textura": "Apresenta associação dupla: pode ser relacionada tanto a superfícies lisas (da casca da fruta) quanto a texturas pontiagudas para os que a associam primariamente à acidez."
+    },
+    {
+      "nome_da_cor": "Roxo / Violeta",
+      "significado_psicologico_e_ideia": "Ligada à espiritualidade, mistério, luxo, intuição, verdade e sonhos, além de estimular a área do cérebro destinada à criatividade.",
+      "referencias_fisicas_mundo_real": "Relacionada a pedras como a ametista e certas plantas e folhagens que ocorrem na natureza.",
+      "dica_design_produtos_moda": "A cor pode ser usada em produtos de moda que buscam passar uma mensagem de sensibilidade, nobreza e para promover a solução de bloqueios criativos.",
+      "dica_design_interiores_decoracao": "Útil para promover uma atmosfera de calmaria mental e resolução de problemas, sendo ligada à intuição e riqueza.",
+      "associacao_de_textura": "Embora os testes práticos texturais da fonte não a citem diretamente com uma textura natural específica, a cor partilha da característica de representar conceitos abstratos de luxo, calma e espiritualidade."
+    }
+  ]
+}
+```

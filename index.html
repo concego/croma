@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croma - Engenharia de Acessibilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Croma</h1>
+        <p>Conversor de Atributos de Cor para Design Universal e Acessibilidade.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Objetivo da Consulta</h2>
+            <div class="search-group" role="group" aria-label="Selecione o contexto da consulta">
+                <button class="btn-contexto" onclick="definirContexto('geral')">Geral (Psicologia e Referências)</button>
+                <button class="btn-contexto" onclick="definirContexto('moda')">Moda e Produtos</button>
+                <button class="btn-contexto" onclick="definirContexto('decoracao')">Arquitetura e Interiores</button>
+            </div>
+            <p id="status-contexto" aria-live="polite">Modo atual: Geral</p>
+        </section>
+
+        <section class="card">
+            <h2>Selecione a Cor:</h2>
+            <div id="containerBotoes" class="grid-botoes" role="group" aria-label="Cores disponíveis para consulta">
+                </div>
+            
+            <div id="displayResultado" class="painel-resultado" aria-live="assertive" role="region">
+                Selecione um objetivo e uma cor para gerar a especificação técnica.
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

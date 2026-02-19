@@ -1,0 +1,30 @@
+```json
+{
+  "config_logica_cudc": {
+    "1_codigo_precedente_obrigatorio": {
+      "descricao": "A identificação do Código Universal de Cores (CUdC) se dá pela utilização obrigatória de um código precedente.",
+      "caractere_braille": "ç",
+      "pontos":
+    },
+    "2_mapeamento_cores_primarias": {
+      "regra_geral": "As linhas da cela braille são utilizadas para representar as cores primárias.",
+      "amarelo": "A cor amarela é associada à primeira linha da cela, que compreende os pontos 1 e 4.",
+      "vermelho": "A cor vermelha é associada à segunda linha da cela, que compreende os pontos 2 e 5.",
+      "azul": "A cor azul é associada à terceira linha da cela, que compreende os pontos 3 e 6."
+    },
+    "3_logica_intensidades_saturacoes": {
+      "regra_geral": "As colunas da cela braille representam as variações de intensidade ou saturação das cores, variando em 0%, 33%, 66% e 100%.",
+      "0_porcento": "Representa a ausência total da cor (nenhum ponto marcado na respectiva linha).",
+      "33_porcento_claro": "Para uma tonalidade clara (33%), utiliza-se apenas o ponto da primeira coluna da linha, como o ponto 1 para obter o amarelo claro.",
+      "66_porcento_medio": "Para uma tonalidade média (66%), utiliza-se apenas o ponto da segunda coluna da linha, como o ponto 4 para obter o amarelo médio.",
+      "100_porcento_forte": "Para uma tonalidade forte (100%), preenchem-se ambas as colunas (1 e 2) da respectiva linha, como os pontos 1 e 4 juntos para obter o amarelo forte."
+    },
+    "4_formacao_cores_secundarias": {
+      "regra_geral": "As cores secundárias são formadas pela junção e mistura dos pontos das linhas correspondentes às cores primárias formadoras.",
+      "laranja": "A cor laranja é formada pela mistura do amarelo e do vermelho, utilizando os pontos da primeira linha (1 e 4) combinados com os da segunda linha (2 e 5).",
+      "verde": "A cor verde é formada pela mistura do amarelo com o azul, unindo os pontos da primeira linha com os da terceira linha (pontos 1, 4, 3 e 6).",
+      "roxo_violeta": "A cor violeta ou roxa é formada pela mistura do vermelho com o azul, combinando os pontos da segunda e da terceira linhas (pontos 2, 5, 3 e 6)."
+    }
+  }
+}
+```
