@@ -3,7 +3,7 @@
     "1_codigo_precedente_obrigatorio": {
       "descricao": "A identificação do Código Universal de Cores (CUdC) se dá pela utilização obrigatória de um código precedente.",
       "caractere_braille": "ç",
-      "pontos":
+      "pontos": "12346"
     },
     "2_mapeamento_cores_primarias": {
       "regra_geral": "As linhas da cela braille são utilizadas para representar as cores primárias.",
