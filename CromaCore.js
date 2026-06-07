@@ -1,47 +1,50 @@
 /**
  * CromaCore.js
- * Motor lógico para Engenharia de Acessibilidade Cromática baseada no CUdC.
- * Focado em elementos imutáveis: Lógica Braille e Psicologia Fundamental.
+ * Engine for Chromatic Accessibility Engineering based on CUdC.
+ * Focused on immutable elements: Braille Logic and Fundamental Psychology.
  */
 
 export class CromaCore {
-    constructor() {
+    constructor(lang = 'pt') {
+        this.lang = lang.toLowerCase();
         this.precedente = { caractere: 'ç', pontos: '12346' };
         
-        this.primarias = {
-            'amarelo': { 
-                linha: [1, 4], 
-                temperatura: 'quente', 
-                peso: 'leve', 
-                estimulo: 'alegria/otimismo', 
-                ancora_tátil: 'sol/frutas cítricas',
-                paladar_olfato: 'azedo (limão)/doce (banana)',
-                biologia: 'estímulo cognitivo alto'
+        this.traducoes = {
+            'pt': {
+                quente: 'quente', frio: 'frio', equilibrada: 'equilibrada',
+                e: ' e ', claro: 'claro', medio: 'medio', forte: 'forte'
             },
-            'vermelho': { 
-                linha: [2, 5], 
-                temperatura: 'quente', 
-                peso: 'pesado', 
-                estimulo: 'alerta/urgência/paixão', 
-                ancora_tátil: 'calor intenso/fogo/vibração da pele',
-                paladar_olfato: 'picante (pimenta)/doce intenso (morango)',
-                biologia: 'aumento do metabolismo/pressão arterial'
-            },
-            'azul': { 
-                linha: [3, 6], 
-                temperatura: 'frio', 
-                peso: 'medio', 
-                estimulo: 'calma/confiança/serenidade', 
-                ancora_tátil: 'umidade/água/frescor',
-                paladar_olfato: 'fresco/suave',
-                biologia: 'inibe melatonina/aumenta alerta consciente'
+            'en': {
+                quente: 'warm', frio: 'cold', equilibrada: 'balanced',
+                e: ' and ', claro: 'light', medio: 'medium', forte: 'bold'
             }
         };
 
-        this.neutras = {
-            'branco': { pontos: [], significado: 'pureza/clareza', sensorial: 'vazio/luz' },
-            'preto': { pontos: [1, 2, 3, 4, 5, 6], significado: 'sofisticação/opressão', sensorial: 'densidade/peso' },
-            'cinza': { pontos: [2, 5], significado: 'rigidez/neutralidade', sensorial: 'metal/concreto/trovão' }
+        this.primarias = {
+            'amarelo': { 
+                id: 'yellow',
+                linha: [1, 4], 
+                pt: { temp: 'quente', peso: 'leve', est: 'alegria/otimismo', tac: 'sol/frutas cítricas', sab: 'azedo (limão)/doce (banana)', bio: 'estímulo cognitivo alto' },
+                en: { temp: 'warm', peso: 'light', est: 'joy/optimism', tac: 'sun/citrus fruits', sab: 'sour (lemon)/sweet (banana)', bio: 'high cognitive stimulus' }
+            },
+            'vermelho': { 
+                id: 'red',
+                linha: [2, 5], 
+                pt: { temp: 'quente', peso: 'pesado', est: 'alerta/urgência/paixão', tac: 'calor intenso/fogo/vibração da pele', sab: 'picante (pimenta)/doce intenso (morango)', bio: 'aumento do metabolismo/pressão arterial' },
+                en: { temp: 'warm', peso: 'heavy', est: 'alert/urgency/passion', tac: 'intense heat/fire/skin vibration', sab: 'spicy (pepper)/intense sweet (strawberry)', bio: 'increased metabolism/blood pressure' }
+            },
+            'azul': { 
+                id: 'azul',
+                linha: [3, 6], 
+                pt: { temp: 'frio', peso: 'medio', est: 'calma/confiança/serenidade', tac: 'umidade/água/frescor', sab: 'fresco/suave', bio: 'inibe melatonina/aumenta alerta consciente' },
+                en: { temp: 'cold', peso: 'medium', est: 'calm/confidence/serenity', tac: 'humidity/water/freshness', sab: 'fresh/smooth', bio: 'inhibits melatonin/increases conscious alertness' }
+            }
+        };
+
+        // Aliases para entrada bilíngue
+        this.alias = {
+            'yellow': 'amarelo', 'red': 'vermelho', 'blue': 'azul',
+            'light': 'claro', 'medium': 'medio', 'bold': 'forte'
         };
 
         this.intensidades = {
@@ -51,29 +54,34 @@ export class CromaCore {
         };
     }
 
-    /**
-     * Gera a Ficha Técnica completa baseada no CUdC e na pesquisa multissensorial.
-     */
+    setLang(l) { this.lang = l.toLowerCase(); }
+
     gerarFicha(cor1, cor2 = null, nivel = 'forte') {
-        const coresInput = [cor1.toLowerCase()];
-        if (cor2) coresInput.push(cor2.toLowerCase());
+        const c1 = this.alias[cor1.toLowerCase()] || cor1.toLowerCase();
+        const c2 = cor2 ? (this.alias[cor2.toLowerCase()] || cor2.toLowerCase()) : null;
+        const n = this.alias[nivel.toLowerCase()] || nivel.toLowerCase();
+
+        const coresInput = [c1];
+        if (c2) coresInput.push(c2);
 
         const pontos = new Set();
         const atributos = { temp: [], est: [], tátil: [], bio: [], sabor: [] };
+        const t = this.traducoes[this.lang] || this.traducoes['pt'];
 
         coresInput.forEach(c => {
             const d = this.primarias[c];
             if (d) {
-                const cols = this.intensidades[nivel].colunas;
+                const cols = this.intensidades[n].colunas;
                 cols.forEach(col => {
                     if (col === 1) pontos.add(d.linha[0]);
                     if (col === 2) pontos.add(d.linha[1]);
                 });
-                atributos.temp.push(d.temperatura);
-                atributos.est.push(d.estimulo);
-                atributos.tátil.push(d.ancora_tátil);
-                atributos.bio.push(d.biologia);
-                atributos.sabor.push(d.paladar_olfato);
+                const loc = d[this.lang] || d['pt'];
+                atributos.temp.push(loc.temp);
+                atributos.est.push(loc.est);
+                atributos.tátil.push(loc.tac);
+                atributos.bio.push(loc.bio);
+                atributos.sabor.push(loc.sab);
             }
         });
 
@@ -81,21 +89,22 @@ export class CromaCore {
             tecnico: {
                 precedente: this.precedente,
                 pontos_braille: Array.from(pontos).sort(),
-                codigo_string: `ç + ${Array.from(pontos).sort().join('')}`
+                codigo_string: `${this.precedente.caractere} + ${Array.from(pontos).sort().join('')}`
             },
             percepcao: {
                 temperatura: this._processarTemp(atributos.temp),
-                estimulo: atributos.est.join(' e '),
+                estimulo: atributos.est.join(t.e),
                 referencia_fisica: atributos.tátil.join(' + '),
                 impacto_biologico: atributos.bio.join(' | '),
-                paladar_olfato: atributos.sabor.join(' e ')
+                paladar_olfato: atributos.sabor.join(t.e)
             }
         };
     }
 
     _processarTemp(ts) {
-        if (ts.every(t => t === 'quente')) return 'quente';
-        if (ts.every(t => t === 'frio')) return 'frio';
-        return 'equilibrada';
+        const t = this.traducoes[this.lang] || this.traducoes['pt'];
+        if (ts.every(x => x === t.quente)) return t.quente;
+        if (ts.every(x => x === t.frio)) return t.frio;
+        return t.equilibrada;
     }
 }
