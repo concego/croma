@@ -42,7 +42,8 @@ O Croma foi desenhado para ser o "miolo" de diversas soluções:
 ### ☕ Contribua com a Pesquisa
 O **Croma** é um projeto de código aberto e pesquisa independente. Se esta biblioteca é útil para você ou sua empresa, considere apoiar a continuidade deste trabalho de engenharia de acessibilidade:
 
-- **Pix / PayPal:** `aanderson.carvalho@hotmail.com`
+- **Pix:** `euconcego@gmail.com`
+- **PayPal:** `aanderson.carvalho@hotmail.com`
 
 ---
 
