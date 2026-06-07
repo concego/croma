@@ -1,50 +1,45 @@
----
+# Croma — Engenharia de Acessibilidade Cromática
 
+O **Croma** é um motor lógico (Engine) e biblioteca de referência para a tradução de atributos cromáticos em especificações técnicas táteis e conceituais. Fundamentado na Teoria Histórico-Cultural de Vigotski e no **Código Universal de Cores (CUdC)**, o projeto promove a equidade na percepção das cores por pessoas cegas ou com baixa visão.
 
+## 🧠 A Filosofia
+Diferente de ferramentas que apenas nomeiam cores, o Croma foca nos **aspectos imutáveis** da cor:
+1. **Lógica Técnica:** Representação sistemática na cela Braille (CUdC).
+2. **Física Sensorial:** Propriedades térmicas e cinestésicas (calor, peso, textura).
+3. **Psicologia Evolutiva:** Impacto biológico e emocional (alerta, calma, energia).
 
-\# Croma - Engenharia de Acessibilidade Cromática
+## 🚀 Como Funciona a Biblioteca (CromaCore)
+A biblioteca `CromaCore.js` funciona como uma "calculadora de cores". Ela processa entradas (primárias e intensidades) e devolve uma ficha técnica multissensorial completa.
 
+### Exemplo de Uso (JS):
+```javascript
+import { CromaCore } from './CromaCore.js';
 
+const engine = new CromaCore();
+const ficha = engine.gerarFicha('vermelho', 'amarelo', 'forte'); // Gera Laranja Forte
 
-O \*\*Croma\*\* é um instrumento cultural especial desenvolvido para promover a equidade na percepção e uso das cores por pessoas cegas ou com baixa visão. O projeto converte atributos cromáticos em especificações técnicas táteis e conceituais, fundamentado em pesquisas de acessibilidade e no \*\*Código Universal de Cores (CUdC)\*\*.
+console.log(ficha.tecnico.codigo_string); // "ç + 1425"
+console.log(ficha.percepcao.temperatura); // "quente"
+console.log(ficha.percepcao.estimulo);    // "alerta/urgência e alegria/otimismo"
+```
 
+## 📚 Base de Pesquisa
+Este motor é alimentado por uma curadoria científica que inclui:
+- **CUdC:** Sistema de Pereira e Ferronato (2019).
+- **See Color:** Linguagens táteis para deficiência visual.
+- **Psicologia das Cores:** Significados universais e biológicos.
+- **Termodinâmica:** Relação entre cor e absorção de calor.
 
-
-\## 🛠️ Funcionalidades Técnicas
-
-
-
-\* \*\*Implementação do CUdC:\*\* Tradução sistemática de cores para a cela Braille, utilizando o código precedente obrigatório `ç` (pontos 12346).
-
-\* \*\*Mapeamento Multissensorial:\*\* Fornece âncoras mentais concretas para cada cor (ex: \*\*Vermelho\*\* associado ao calor/tomate; \*\*Azul\*\* ao frescor/água).
-
-\* \*\*Consultoria de Contexto:\*\* Filtros específicos para aplicação de cores em \*\*Moda/Produtos\*\* e \*\*Arquitetura/Interiores\*\*, auxiliando designers na criação de projetos inclusivos.
-
-\* \*\*Interface Acessível:\*\* Desenvolvido com foco total em leitores de tela (NVDA e TalkBack), utilizando atributos \*\*WAI-ARIA\*\* e regiões de atualização dinâmica (`aria-live`).
-
-
-
-\## 📚 Fundamentação Teórica
-
-
-
-O projeto aplica conceitos discutidos em instituições de referência como o \*\*Instituto Benjamin Constant\*\* e a \*\*UFRGS\*\*, unindo a teoria histórico-cultural de Vigotski com a praticidade do desenvolvimento de software. A ferramenta foca na autonomia do usuário para identificar, combinar e rotular objetos (como através de etiquetas Braille em produtos artesanais).
-
-
-
-\## 💻 Estrutura de Diretórios
-
-
-
-\* `/dados`: Contém as bases de dados em JSON com a lógica do CUdC e os significados das cores.
-
-\* `/js`: Motores de processamento e manipulação de dados.
-
-\* `index.html`: Interface principal otimizada para acessibilidade.
-
-
+## 🛠️ Aplicações Possíveis
+O Croma foi desenhado para ser o "miolo" de diversas soluções:
+- **Design de Produtos:** Criação de etiquetas táteis padronizadas.
+- **Educação Inclusiva:** Ferramentas pedagógicas para ensino de artes e física.
+- **Arquitetura/Moda:** Validadores de intenção sensorial para projetos acessíveis.
+- **Dispositivos IoT:** Sensores que traduzem cor para feedback háptico ou sonoro.
 
 ---
 
+### [Explorar Documentação de Usabilidade (GitHub Pages)](https://concego.github.io/croma/)
+### [Baixar / Clonar o Repositório](https://github.com/concego/croma)
 
-
+*Desenvolvido por **Anderson Carvalho (Eu Concego Jogar)** — Promovendo inclusão digital através da engenharia e da cultura.*
